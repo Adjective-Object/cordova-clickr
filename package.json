@@ -12,12 +12,11 @@
     "type": "git",
     "url": "git://github.com/Adjective-Object/findr.git"
   },
-  "dependencies": {
+  "devDependencies": {
     "classnames": "^2.1.3",
     "react": "^0.13.3",
-    "reflux": "^0.2.11"    
-  },
-  "devDependencies": {
+    "reflux": "^0.2.11",
+    "cordova": "^5.1.1",
     "coffee-reactify": "^2.1",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.8.0",
