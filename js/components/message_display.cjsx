@@ -75,6 +75,12 @@ MessageDisplay = React.createClass
 
     render: ->
         msg = levelToMessage(this.state.ps.level)
+
+        # the ReactCSSTransitionGroup automatically manages changing children.
+        # when a new child is added (as identified by key), it gets the class
+        # .textcycle-enter and when it leaves, it gets the class
+        # .textcycle-leave. optionally .textcycle-appear, if transitionAppear
+        # is specified
         <ReactCSSTransitionGroup
             transitionName="textcycle"
             transitionAppear={true}>
