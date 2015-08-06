@@ -31,7 +31,6 @@ TouchButton = React.createClass
         }
 
     handleTouchStart: (e) ->
-        touch = e.nativeEvent.changedTouches[0]
         this.setState({
             tracking_touch: true
             })
@@ -69,7 +68,12 @@ TouchButton = React.createClass
              onTouchStart={this.handleTouchStart}
              onTouchMove={this.handleTouchMove}
              onTouchCancel={this.handleTouchCancel}
-             onTouchEnd={this.handleTouchEnd}>
+             onTouchEnd={this.handleTouchEnd}
+
+             onMouseDown={this.handleTouchStart}
+             onMouseExit={this.handleTouchCancel}
+             onMouseUp={this.handleTouchEnd}>
+
              
              <div className="over">
                 {this.props.children}

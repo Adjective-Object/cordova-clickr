@@ -11,7 +11,7 @@ PlayerStore = Reflux.createStore
     # if that fails, use the default
     getInitialState: ->
         storageState = window.localStorage.getItem("playerState")
-        this.playerState = 
+        this.playerState =
             if storageState then JSON.parse(storageState) else defaultState
         return this.playerState
 
@@ -26,7 +26,7 @@ PlayerStore = Reflux.createStore
     # notify listening objects of the change
     cacheAndTrigger: ->
         window.localStorage.setItem(
-            "playerState", 
+            "playerState",
             JSON.stringify(this.playerState))
         this.trigger(this.playerState)
 

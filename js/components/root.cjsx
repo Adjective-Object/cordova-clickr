@@ -3,7 +3,7 @@ MessageDisplay = require "./message_display.cjsx"
 
 Root = React.createClass
     displayName: "Root"
-    render: -> 
+    render: ->
         <div id="root">
             <h1>MMORPG</h1>
             <MessageDisplay />

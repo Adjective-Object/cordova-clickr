@@ -8,4 +8,4 @@ window.onload = () ->
     React.render(
         <Root/>,
         document.getElementById('app')
-    );
+    )

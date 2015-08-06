@@ -9,9 +9,8 @@
 #     store reacts and triggers ->
 #     components update
 
-# Main ui
 PlayerActions = Reflux.createActions([
-    "updateLevel",
+    "updateLevel",  # action for changing the level of the player
 ])
 
 

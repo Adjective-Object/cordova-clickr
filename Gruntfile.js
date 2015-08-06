@@ -1,6 +1,6 @@
 grunfs = require('fs');
 grunt = require('grunt');
-grunt.loadNpmTasks('grunt-coffee-react');
+grunt.loadNpmTasks('grunt-coffeelint-cjsx');
 grunt.loadNpmTasks('grunt-concat-sourcemap');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -30,8 +30,18 @@ js_bundle_targets = [
 ]
 
 module.exports = function(grunt) {
-
   grunt.initConfig({
+    coffeelint: {
+      sources: {
+        options: {
+          configFile: 'coffeelint.json'
+        },
+        files: {
+          src: ['js/*.cjsx', 'js/*/*.cjsx']
+        }
+      }
+    },
+
     browserify: {
       lib: {
         files:{
@@ -136,6 +146,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('dev',
     ['concurrent:precompile', 'concurrent:watch_working_sources']);
+
+  grunt.registerTask('lint', ['coffeelint:sources']);
 
   grunt.registerTask('default', ['concurrent:precompile']);
 
