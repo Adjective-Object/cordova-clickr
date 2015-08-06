@@ -3,24 +3,31 @@ PlayerActions = (require "../actions/actions.cjsx").PlayerActions
 PlayerStore = Reflux.createStore
     # actions this store listens to
     listenables: [PlayerActions]
+    defaultState: {
+        level: 0
+    }
 
-    # the initial state of the store
+    # the initial state of the store from localstorage
+    # if that fails, use the default
     getInitialState: ->
-        this.playerState = {
-            level: 0
-        }
+        storageState = window.localStorage.getItem("playerState")
+        this.playerState = 
+            if storageState then JSON.parse(storageState) else defaultState
         return this.playerState
 
     # responses to actions are dispatched automatically by action name
     # (i.e. updateLevel -> onUpdateLevel)
     onUpdateLevel: (level) ->
         if this.level != level
-            # console.log "updating level #{this.playerState.level} -> #{level}"
             this.playerState.level = level
-            this.trigger(this.playerState)
-        else
-            # console.log "ignoring level update #{this.playerState.level} -> #{level}"
+            this.cacheAndTrigger()
 
-
+    # cache the player state to local stoarage and then
+    # notify listening objects of the change
+    cacheAndTrigger: ->
+        window.localStorage.setItem(
+            "playerState", 
+            JSON.stringify(this.playerState))
+        this.trigger(this.playerState)
 
 module.exports = PlayerStore

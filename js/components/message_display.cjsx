@@ -1,5 +1,7 @@
 PlayerStore = require "../stores/player_store.cjsx"
 
+# mapping between the minimum level required to see a message 
+# and the body of the message
 mapping =
     0:  "welcome to MMORPG!"
     10: "gz on level 10!"
@@ -36,23 +38,30 @@ mapping =
          just going to keep pressing that button"
     480: ""
     500: "stop."
-    600: <img src="./img/dickbutt.png" 
-            height="128px" 
-            style={"-webkit-transform": "translate(0, -64px) scale(0.1, 0.1)"}/>
-    700: <img src="./img/dickbutt.png" 
-            height="128px" 
-            style={"-webkit-transform": "translate(0, -64px) scale(0.3, 0.3)"}/>
-    800: <img src="./img/dickbutt.png" 
-            height="128px" 
-            style={"-webkit-transform": "translate(0, -64px) scale(0.5, 0.5)"}/>
-    900: <img src="./img/dickbutt.png" 
-            height="128px" 
-            style={"-webkit-transform": "translate(0, -64px) scale(0.7, 0.7)"}/>
-    1000: <img src="./img/dickbutt.png" 
-            height="128px" 
-            style={"-webkit-transform": "translate(0, -64px) scale(1.0, 1.0)"}/>
+    600: <img src="./img/dickbutt.png"
+            height="128px"
+            style={"-webkit-transform":
+                    "translate(0, -64px) scale(0.1, 0.1)"}/>
+    700: <img src="./img/dickbutt.png"
+            height="128px"
+            style={"-webkit-transform":
+                    "translate(0, -64px) scale(0.3, 0.3)"}/>
+    800: <img src="./img/dickbutt.png"
+            height="128px"
+            style={"-webkit-transform":
+                    "translate(0, -64px) scale(0.5, 0.5)"}/>
+    900: <img src="./img/dickbutt.png"
+            height="128px"
+            style={"-webkit-transform":
+                    "translate(0, -64px) scale(0.7, 0.7)"}/>
+    1000: <img src="./img/dickbutt.png"
+            height="128px"
+            style={"-webkit-transform":
+                    "translate(0, -64px) scale(1.0, 1.0)"}/>
 
 
+# given the level as an integer, return the appropriate message from
+# the messages mapping
 levelToMessage = (level) ->
     intkeys = (parseInt i for i in Object.keys(mapping))
     candidates = intkeys.filter((k)-> k <= level)
@@ -62,13 +71,10 @@ levelToMessage = (level) ->
     else
         return ""
 
+
 MessageDisplay = React.createClass
     displayName: "MessageDisplay"
     mixins: [Reflux.connect(PlayerStore, "ps")],
-
-    incrementCounter: ->
-        # console.log "incrementing counter"
-        PlayerActions.updateLevel(this.state.ps.level + 1)
 
     render: ->
         <div className="message-display">
