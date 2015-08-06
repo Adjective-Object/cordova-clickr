@@ -1,8 +1,6 @@
 PlayerStore = require "../stores/player_store.cjsx"
 ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
-trans_db = "translate(0, -64px) "
-
 # mapping between the minimum level required to see a message
 # and the body of the message
 mapping =
@@ -40,19 +38,19 @@ mapping =
     500: "stop."
     600: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": trans_db + "scale(0.1, 0.1)"}/>
+              style={"-webkit-transform": "scale(0.1, 0.1)"}/>
     700: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": trans_db + "scale(0.3, 0.3)"}/>
+              style={"-webkit-transform": "scale(0.3, 0.3)"}/>
     800: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": trans_db + "scale(0.5, 0.5)"}/>
+              style={"-webkit-transform": "scale(0.5, 0.5)"}/>
     900: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": trans_db + "scale(0.7, 0.7)"}/>
+              style={"-webkit-transform": "scale(0.7, 0.7)"}/>
     1000: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": trans_db + "scale(1.0, 1.0)"}/>
+              style={"-webkit-transform": "scale(1.0, 1.0)"}/>
 
 
 # get the appropriate message for any level
