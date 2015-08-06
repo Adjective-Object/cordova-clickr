@@ -2,7 +2,7 @@
 a generic clicker application for setting up and messing around in a
 coffescript / react / reflux / cordova workflow 
 
-To setup, clone the repo and do
+To setup, clone the repo, navigate to the cloned directory, and call
 
 ```bash
 $ npm install
