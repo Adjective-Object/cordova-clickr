@@ -38,6 +38,9 @@ To include a stylesheet, `@include` it in `index.scss`.
 
 
 ## overview of react/reflux magic
+You don't need to read this section if you already know how react / reflux
+works, this is jsut a quick overview to bring people up to speed without having
+to go off on large tangents.
 
 ### stores
 All shared state is supposed to be held in a store. Components can listen to
@@ -57,12 +60,7 @@ For example, if `LoginStore` is listening to `userLogin`, then when `userLogin`
 is fired, `LoginStore.onUserLogin` will automatically be called.
 
 ### components
-Components are like custom DOM elements and I don't know really what the best
-way to handle this is, so just go read 
-[The React Tutoirials](https://facebook.github.io/react/docs/tutorial.html)
-or something.
-
-*tl;dr*:
+Components are like custom DOM elements on the React Virtual DOM.*tl;dr,*
 
 - *props*: values that are not going to change during the lifetime of a
     component, passed in from the component's parent
@@ -70,3 +68,7 @@ or something.
 - `render`: Draw the component as a React virtual DOM element
 - `getInitialState` 
 - `getDefaultProps`
+
+There's a lot of useful stuff in the React API, so go read
+[The React Tutoirials](https://facebook.github.io/react/docs/tutorial.html)
+when you have questions / some free time.
