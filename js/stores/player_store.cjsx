@@ -1,11 +1,12 @@
 PlayerActions = (require "../actions/actions.cjsx").PlayerActions
 
+
+defaultState =
+    level: 0
+
 PlayerStore = Reflux.createStore
     # actions this store listens to
     listenables: [PlayerActions]
-    defaultState: {
-        level: 0
-    }
 
     # the initial state of the store from localstorage
     # if that fails, use the default

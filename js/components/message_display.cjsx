@@ -1,4 +1,5 @@
 PlayerStore = require "../stores/player_store.cjsx"
+ReactCSSTransitionGroup = React.addons.CSSTransitionGroup
 
 trans_db = "translate(0, -64px) "
 
@@ -15,13 +16,10 @@ mapping =
     70: "woa, nearing level cap already!?"
     80: "almost there,  just 19 more levels"
     90: "endgame here we come!"
-    94: "5!"
-    95: "4!"
-    96: "3!"
-    97: "2!"
-    98: "1!"
+    94: "so.."
+    96: "close.."
     99: "congrats! you beat the game!"
-    100: "uhh... you can stop now"
+    110: "uhh... you can stop now"
     120: "no really, that's it, the game is done..."
     150: "why are you doing this?"
     170: "are you hoping to get some kind of satisfaction out of it?"
@@ -72,9 +70,19 @@ MessageDisplay = React.createClass
     displayName: "MessageDisplay"
     mixins: [Reflux.connect(PlayerStore, "ps")],
 
+    clearExitAnim: ->
+        (React.getDOMElement this.refs.old)
+
     render: ->
-        <div className="message-display">
-            {levelToMessage(this.state.ps.level)}
-        </div>
+        msg = levelToMessage(this.state.ps.level)
+        <ReactCSSTransitionGroup
+            transitionName="textcycle"
+            transitionAppear={true}>
+
+            <div className="message-display"
+                 key={msg}>
+                {msg}
+            </div>
+        </ReactCSSTransitionGroup>
 
 module.exports = MessageDisplay

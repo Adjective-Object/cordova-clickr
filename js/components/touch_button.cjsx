@@ -68,11 +68,7 @@ TouchButton = React.createClass
              onTouchStart={this.handleTouchStart}
              onTouchMove={this.handleTouchMove}
              onTouchCancel={this.handleTouchCancel}
-             onTouchEnd={this.handleTouchEnd}
-
-             onMouseDown={this.handleTouchStart}
-             onMouseExit={this.handleTouchCancel}
-             onMouseUp={this.handleTouchEnd}>
+             onTouchEnd={this.handleTouchEnd}>
 
              
              <div className="over">

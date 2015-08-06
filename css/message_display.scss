@@ -9,6 +9,17 @@
     }
 }
 
+@include keyframes(zoomo) {
+    0% {
+        @include transform(scale(1, 1));
+        opacity: 1;
+    }
+    100% {
+        @include transform(scale(0, 0));
+        opacity: 0;
+    }
+}
+
 .message-display {
     font-family: Roboto;
     font-size: 24px;
@@ -17,9 +28,15 @@
     padding-left: 12px;
     padding-right: 12px;
 
-    @include animation(zoom 0.5s);
-
     img {
-        @include transition(0.5s, transform);
+        @include transition(0.5s, all);
     }
+}
+
+.message-display.textcycle-enter, .message-display.textcycle-appear {
+    @include animation(zoom 0.5s);
+}
+
+.message-display.textcycle-leave {
+    @include animation(zoomo 0.5s);
 }
