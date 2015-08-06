@@ -1,0 +1,56 @@
+@import 'globals';
+
+.custom-button {
+    -webkit-user-select: none;
+    color: $branding_bg;
+
+
+    font-size: 24px;
+
+    $depth: 0.25em;
+
+    position: relative;
+
+    font-family: Roboto;
+    font-weight: 100;
+
+    position: relative;
+    text-align:center;
+
+    display: inline-block;
+
+    .over, .under {
+        border-radius: 3px;
+        padding: 0.5em;
+        transition: all $transition_time;
+        min-width: 240px;
+    }
+
+    .over {
+        position:relative;
+        background-color: $branding_dom;
+        z-index:3;
+    }
+    
+    .under {
+        background-color: darken($branding_dom, 10%);
+
+        position:absolute;
+
+        width:100%;
+        height: 100%;
+        top: $depth;
+        z-index:1;
+    }
+
+    &.active {
+        color: $branding_sub;
+
+        .over {
+            @include transform( translate(0, $depth) );
+        }
+        
+        @include box_shadow(0, 0em, 0, darken($branding_dom, 10%));
+    }
+}
+

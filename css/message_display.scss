@@ -1,0 +1,18 @@
+@include keyframes(zoom) {
+    0% {
+        @include transform(scale(2, 2));
+        opacity: 0;
+    }
+    100% {
+        @include transform(scale(1, 1));
+        opacity: 1;
+    }
+}
+
+.message-display {
+    font-family: Roboto;
+    font-size: 24px;
+    opacity: 0.7;
+
+    @include animation(zoom 0.5s);
+}
