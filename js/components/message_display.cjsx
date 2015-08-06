@@ -36,9 +36,22 @@ mapping =
          just going to keep pressing that button"
     480: ""
     500: "stop."
+    600: <img src="./img/dickbutt.png" 
+            height="128px" 
+            style={"-webkit-transform": "translate(0, -64px) scale(0.1, 0.1)"}/>
+    700: <img src="./img/dickbutt.png" 
+            height="128px" 
+            style={"-webkit-transform": "translate(0, -64px) scale(0.3, 0.3)"}/>
+    800: <img src="./img/dickbutt.png" 
+            height="128px" 
+            style={"-webkit-transform": "translate(0, -64px) scale(0.5, 0.5)"}/>
+    900: <img src="./img/dickbutt.png" 
+            height="128px" 
+            style={"-webkit-transform": "translate(0, -64px) scale(0.7, 0.7)"}/>
     1000: <img src="./img/dickbutt.png" 
             height="128px" 
-            style={"-webkit-transform": "translate(0, -64px)"}/>
+            style={"-webkit-transform": "translate(0, -64px) scale(1.0, 1.0)"}/>
+
 
 levelToMessage = (level) ->
     intkeys = (parseInt i for i in Object.keys(mapping))

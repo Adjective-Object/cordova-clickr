@@ -15,4 +15,8 @@
     opacity: 0.7;
 
     @include animation(zoom 0.5s);
+
+    img {
+        @include transition(0.5s, transform);
+    }
 }
