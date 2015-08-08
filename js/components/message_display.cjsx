@@ -38,19 +38,19 @@ mapping =
     500: "stop."
     600: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": "scale(0.1, 0.1)"}/>
+              style={"WebkitTransform": "scale(0.1, 0.1)"}/>
     700: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": "scale(0.3, 0.3)"}/>
+              style={"WebkitTransform": "scale(0.3, 0.3)"}/>
     800: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": "scale(0.5, 0.5)"}/>
+              style={"WebkitTransform": "scale(0.5, 0.5)"}/>
     900: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": "scale(0.7, 0.7)"}/>
+              style={"WebkitTransform": "scale(0.7, 0.7)"}/>
     1000: <img src="./img/dickbutt.png"
               height="128px"
-              style={"-webkit-transform": "scale(1.0, 1.0)"}/>
+              style={"WebkitTransform": "scale(1.0, 1.0)"}/>
 
 
 # get the appropriate message for any level
