@@ -2,7 +2,7 @@ grunfs = require('fs');
 grunt = require('grunt');
 grunt.loadNpmTasks('grunt-coffeelint-cjsx');
 grunt.loadNpmTasks('grunt-concat-sourcemap');
-grunt.loadNpmTasks('grunt-contrib-sass');
+grunt.loadNpmTasks('grunt-sass');
 grunt.loadNpmTasks('grunt-contrib-uglify');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-concurrent');
