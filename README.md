@@ -2,6 +2,10 @@
 A generic clicker application for setting up and messing around in a
 coffescript / react / reflux / cordova workflow
 
+Requires [node](https://nodejs.org/) and 
+[libsass](https://github.com/sass/libsass). Both are most likely available
+through your favorite package manager.
+
 To setup, clone the repo, navigate to the cloned directory, and call
 
     $ npm install
@@ -9,6 +13,8 @@ To setup, clone the repo, navigate to the cloned directory, and call
     $ cordova platform add <android/ios/etc>
     $ cordova run
 
+# license
+[apache2](http://www.apache.org/licenses/LICENSE-2.0)
 
 
 # project stack / organization
